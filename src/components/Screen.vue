@@ -1,6 +1,7 @@
 <template>
   <div class="screen">
-    <canvas ref="screen"></canvas>
+    <video ref="screen">
+    </video>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 import { mounted } from './screen'
 
 export default {
-  name: 'screen',
+  name: 'capture-screen',
   mounted
 }
 </script>

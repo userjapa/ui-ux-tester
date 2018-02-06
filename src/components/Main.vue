@@ -29,5 +29,6 @@ export default {
   border: 1px solid black;
   flex-basis: 400px;
   flex-grow: 1;
+  max-width: 50%;
 }
 </style>

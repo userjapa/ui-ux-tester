@@ -9,7 +9,7 @@
 import { mounted } from './camera'
 
 export default {
-  name: 'camera',
+  name: 'camera-screen',
   mounted
 }
 </script>
