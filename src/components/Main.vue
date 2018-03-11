@@ -1,22 +1,26 @@
 <template>
   <div class="dad">
     <div class="son">
-      <Camera>
+      <Camera :callback="callbackCamera">
       </Camera>
     </div>
     <div class="son">
-      <Screen>
+      <Screen :callback="callbackScreen">
       </Screen>
     </div>
   </div>
 </template>
 
 <script>
-import { components } from './main'
+import { data, methods, components, sockets, mounted } from './main'
 
 export default {
-  name: 'main',
-  components
+  name: 'Main',
+  data,
+  methods,
+  components,
+  sockets,
+  mounted
 }
 </script>
 

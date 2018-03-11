@@ -2,8 +2,14 @@ export default function () {
   let screen = this.$refs['screen']
 
   const success = stream => {
-    screen.src = window.URL.createObjectURL(stream)
-    screen.play()
+    if (!screen.mozSrcObject) {
+      screen.srcObject = stream
+    } else {
+      screen.mozSrcObject = stream
+    }
+    if (this.callback) {
+      this.callback(stream)
+    }
   }
   const error = err => {
     console.log('Failed to capture Screen', err)
@@ -37,7 +43,7 @@ export default function () {
   (async () => {
     if ('getUserMedia' in navigator.mediaDevices) {
       if (navigator.mediaDevices.getSupportedConstraints().mediaSource && typeof InstallTrigger !== 'undefined') {
-        constraint.video = { mediaSource: 'screen' }
+        constraint.video = { mediaSource: 'window' }
       } else if (window.chrome && window.chrome.webstore) {
         const EXTENSION_ID = 'meiohbiickddgmgomjpnpcjemkdgbkmg'
         const request = {

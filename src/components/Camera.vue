@@ -1,15 +1,16 @@
 <template>
   <div class="camera">
-    <video ref="camera">
+    <video ref="camera" autoplay>
     </video>
   </div>
 </template>
 
 <script>
-import { mounted } from './camera'
+import { props, mounted } from './camera'
 
 export default {
-  name: 'camera-screen',
+  name: 'Camera',
+  props,
   mounted
 }
 </script>

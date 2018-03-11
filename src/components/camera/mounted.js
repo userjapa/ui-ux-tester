@@ -5,10 +5,15 @@ export default function () {
     video: true
   }
   const success = stream => {
-    camera.src = window.URL.createObjectURL(stream)
-    camera.onloadedmetadata = e => {
-      camera.play()
+    if (!camera.mozSrcObject) {
+      camera.srcObject = stream
+    } else {
+      camera.mozSrcObject = stream
     }
+    if (this.callback) {
+      this.callback(stream)
+    }
+    camera.muted = true
   }
   const err = error => {
     console.log('Failed to get User Media: ', error)

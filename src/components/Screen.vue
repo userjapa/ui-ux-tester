@@ -1,21 +1,22 @@
 <template>
   <div class="screen">
-    <video ref="screen">
+    <video ref="screen" autoplay>
     </video>
   </div>
 </template>
 
 <script>
-import { mounted } from './screen'
+import { props, mounted } from './screen'
 
 export default {
-  name: 'capture-screen',
+  name: 'Screen',
+  props,
   mounted
 }
 </script>
 
 <style>
-.screen canvas {
+.screen video {
   height: 100%;
   width: 100%;
 }
