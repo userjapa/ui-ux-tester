@@ -7,7 +7,7 @@ import VueSocketIo from 'vue-socket.io'
 
 Vue.config.productionTip = false
 
-Vue.use(VueSocketIo, 'https://ui-ux-tester-socket.herokuapp.com:8000')
+Vue.use(VueSocketIo, 'https://ui-ux-tester-socket.herokuapp.com')
 
 /* eslint-disable no-new */
 new Vue({
